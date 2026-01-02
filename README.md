@@ -13,6 +13,7 @@ A professional Expense Tracker with reports, charts, and Excel export.
 Bhanu Sri
 
 ## Live Demo
-https://your-username.github.io/expense-tracker/
+https://231fa18274-bhanu.github.io/expense-tracker/
+
 
 
