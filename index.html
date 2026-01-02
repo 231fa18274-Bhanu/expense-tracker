@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <h1>Expense Tracker</h1>
+  <button id="theme-toggle">🌙 Dark Mode</button>
+</header>
+
+<!-- Tabs -->
+<nav class="tabs">
+  <span class="tab active" onclick="showTab('main')">Main</span>
+  <span class="tab" onclick="showTab('reports')">Reports</span>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<section id="main" class="tab-content active">
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="card income-card">
+      <h3>Income</h3>
+      <p>₹ <span id="income">0</span></p>
+    </div>
+    <div class="card expense-card">
+      <h3>Expense</h3>
+      <p>₹ <span id="expense">0</span></p>
+    </div>
+    <div class="card balance-card">
+      <h3>Balance</h3>
+      <p>₹ <span id="balance">0</span></p>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <form id="transaction-form">
+    <input type="text" id="text" placeholder="Description" required>
+    <input type="number" id="amount" placeholder="Amount" required>
+
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <input type="date" id="date" required>
+
+    <button>Add</button>
+  </form>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button id="reset">Clear All</button>
+  </div>
+
+  <!-- Transactions -->
+  <ul id="list"></ul>
+
+</section>
+
+<!-- ================= REPORTS ================= -->
+<section id="reports" class="tab-content">
+
+  <h2>Monthly Overview</h2>
+  <div class="bar-chart">
+    <div class="bar income-bar" id="income-bar">Income</div>
+    <div class="bar expense-bar" id="expense-bar">Expense</div>
+  </div>
+
+  <h2>Income vs Expense</h2>
+  <div class="pie-container">
+    <div id="pie-chart"></div>
+    <div class="legend">
+      <span class="green">Income</span>
+      <span class="red">Expense</span>
+    </div>
+  </div>
+
+  <h2>Export Report</h2>
+  <div class="export-box">
+    <input type="date" id="fromDate">
+    <input type="date" id="toDate">
+    <button id="export">Export to Excel</button>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

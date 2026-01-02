@@ -1,0 +1,165 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #fff;
+  --text: #000;
+  --primary: #3498db;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --card: #2c2c2c;
+  --text: #fff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial;
+  padding: 20px;
+}
+
+/* Header */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tabs */
+.tabs {
+  margin: 20px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab {
+  margin-right: 30px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab.active {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Sections */
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Summary */
+.summary {
+  display: flex;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  flex: 1;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.income-card { border-top: 5px solid green; }
+.expense-card { border-top: 5px solid red; }
+.balance-card { border-top: 5px solid blue; }
+
+/* Form */
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+input, select, button {
+  padding: 10px;
+}
+
+/* Actions */
+.actions {
+  text-align: center;
+}
+
+/* Transactions */
+ul {
+  max-width: 900px;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--card);
+  margin: 10px 0;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+/* Charts */
+.bar-chart {
+  display: flex;
+  gap: 80px;
+  height: 200px;
+  justify-content: center;
+}
+
+.bar {
+  width: 120px;
+  align-self: flex-end;
+  text-align: center;
+  color: white;
+}
+
+.income-bar { background: green; }
+.expense-bar { background: red; }
+
+.pie-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+#pie-chart {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(green 0deg, red 0deg);
+}
+
+.legend span {
+  display: block;
+  margin: 5px 0;
+}
+
+.green { color: green; }
+.red { color: red; }
+
+/* Export */
+.export-box {
+  margin-top: 20px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .summary {
+    flex-direction: column;
+  }
+}
